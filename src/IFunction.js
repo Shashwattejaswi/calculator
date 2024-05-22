@@ -3,9 +3,11 @@ export const priority=(char)=>
         switch(char)
         {
             case '+':
+                return 1;
             case '-':
                 return 1;
             case '*': 
+            return 2;
             case '/':
                 return 2;
             case '^':
@@ -13,6 +15,26 @@ export const priority=(char)=>
 
         }
     }
+
+    export const solve =(first,op,second)=>
+        {
+            switch(op)
+            {
+                case '+':
+                    return first+second;
+                case '-':
+                    return first-second;
+                case '*': 
+                return first*second;
+                case '/':
+                    return first/second;
+                case '^':
+                    return first**second;
+    
+            }
+            console.log();
+
+        }
 
 const parameter=(eq)=>
     {

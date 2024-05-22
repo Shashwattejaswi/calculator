@@ -1,5 +1,5 @@
 import './box.css'
-const StdBox=({takePutNum,operator})=>
+const StdBox=({takePutNum,operate})=>
     {
         const sym=['C',"-/+",'%','+',9,8,7,'-',6,5,4,'*',3,2,1,'/',0,'.',1,'='];
         return(
@@ -9,7 +9,7 @@ const StdBox=({takePutNum,operator})=>
                             
                         if((index+1)%4===0)
                             {
-                                return <button value={item} index={index} className={'operator'+' '+'StdBoxItem'} onClick={(e)=>{operator(e)}}>{item}</button>
+                                return <button value={item} index={index} className={'operator'+' '+'StdBoxItem'} onClick={(e)=>{operate(e)}}>{item}</button>
                             }
                         if((index===19 && index===16))
                             {
