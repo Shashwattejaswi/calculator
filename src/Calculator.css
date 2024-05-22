@@ -1,15 +1,15 @@
 .containar{
-    height: 400px;
-    width: 500px;
+    height: 323px;
+    width: 259px;
     border-radius: 10px;
-    background-color: rgb(67, 67, 67);
+    background-color: rgb(73, 73, 73);
     
 }
 header{
     width: 100%;
     border-radius: 10px 10px 0px 0px;
     height: 6%;
-    background-color: rgb(19, 109, 227);
+    background-color:  rgb(53, 53, 53);
 }
 .rsltBox
 {
@@ -17,7 +17,7 @@ header{
     width: 96%;
     padding: 0px;
     height: 15%;
-    background-color: black;
+    background-color: rgb(53, 53, 53);
     color: white;
     outline: none;
     font-size: 40px;

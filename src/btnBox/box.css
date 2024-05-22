@@ -1,20 +1,47 @@
 .StdBox
 {
     height: 75%;
-    width: 500px;
+    width: 100%;
     border-radius:0px 0px 10px 10px;
-    background-color: rgb(77, 255, 0);
+    background-color: rgb(53, 53, 53);
     display:flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: space-between;
+    row-gap: 1px;
+    column-gap: 1px;
 
     
 }
 button
 {
-    
-    background-color: rgb(173, 47, 47);
+    height: 3rem;
+    width: 4rem;
+    background-color: rgb(88, 88, 88);
     border: 0px;
     outline: 0px;
+    color: aliceblue;
+    font-size: larger;
+    
+}
+
+button:hover{
+    background-color: rgb(58, 58, 58);;
+}
+
+
+.operator
+{
+    background-color: rgb(255, 158, 73);
+}
+.operator:hover{
+    background-color: rgb(255, 179, 113);
+}
+.roundLeft
+{
+    border-radius: 10px 0px 0px 10px;
+}
+.roundRight
+{
+    border-radius: 0px 10px 0px 0px;
 }
