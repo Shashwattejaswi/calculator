@@ -1,7 +1,7 @@
 .StdBox
 {
     height: 75%;
-    width: 100%;
+    width: 259px;
     border-radius:0px 0px 10px 10px;
     background-color: rgb(53, 53, 53);
     display:flex;
@@ -12,6 +12,20 @@
     column-gap: 1px;
 
     
+}
+.ExpandBox
+{
+ height: 75%;
+ width: 390px;
+ border-radius:0px 0px 10px 10px;
+ background-color: rgb(53, 53, 53);
+ display:flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: space-between;
+ row-gap: 1px;
+ column-gap: 1px;
+
 }
 button
 {

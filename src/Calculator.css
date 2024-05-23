@@ -1,15 +1,31 @@
 .containar{
-    height: 323px;
-    width: 259px;
+    height: max-content;
+    width: min-content;
+    /* width: 259px; */
     border-radius: 10px;
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(53, 53, 53)
     
 }
-header{
-    width: 100%;
+.btnBox
+{
+    display: flex;
+    column-gap: 1.1px;
+}
+.HeadBar{
+    width: 98%;
     border-radius: 10px 10px 0px 0px;
-    height: 6%;
+    height: 4%;
+    
     background-color:  rgb(53, 53, 53);
+}
+.HeadBar div
+{
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+    background-color: rgb(255, 139, 37);
+    border-radius: 50%;
+    cursor: pointer;
 }
 .rsltBox
 {
@@ -22,5 +38,5 @@ header{
     outline: none;
     font-size: 40px;
     text-align: end;
-    padding: 2%;
+    padding:1%;
 }

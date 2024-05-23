@@ -1,11 +1,15 @@
 import './Calculator.css';
 import StdBox from './btnBox/StdBox'
 import { useState } from 'react';
+import HeadBar from './HeadBar';
+import ExpandBox from './btnBox/ExpandBox';
 import { priority,solve } from './IFunction';
             var operant = [];
             var operator = [];
+
 const Calculator=()=>
     {
+        const [expand,changeExpand]=useState(false);
         const [num,changeNum]=useState(0);
         let flag=false
         const switchFlag=(a)=>{flag=true};
@@ -96,11 +100,21 @@ const Calculator=()=>
                     flag=true; 
                 }   
             }
+            
+            const expandbtn =()=>{
+                let ex=expand;
+                return ex===true ? changeExpand(false) :  changeExpand(true);
+
+            }
         return(
             <div className="containar">
-                <header></header>
+                <HeadBar expandbtn={expandbtn}/>
                 <input className="rsltBox" value={num}/>
-                <StdBox takePutNum={takePutNum} operate={operate}/>
+                <div className="btnBox">
+                    {expand && <ExpandBox/>}
+                    <StdBox takePutNum={takePutNum} operate={operate}/>
+                </div>
+                
             </div>
         );
     }
