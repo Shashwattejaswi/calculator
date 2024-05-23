@@ -7,20 +7,21 @@ import { priority,solve } from './IFunction';
 const Calculator=()=>
     {
         const [num,changeNum]=useState(0);
-        let flag=0;
-
+        let flag=false
+        const switchFlag=(a)=>{flag=true};
         const takePutNum=(event)=>
             {
-                
                 changeNum((previousNum)=>{
                      if(event.target.value=='C')
-                        return (parseInt(previousNum)<10 && parseInt(previousNum)>-10 )? '0' : previousNum.substring(0,previousNum.length-1);
+                        return '0';
+                       // return (parseInt(previousNum)<10 && parseInt(previousNum)>-10 )? '0' : previousNum.substring(0,previousNum.length-1);
                      else if(event.target.value=="-/+")
             
                             return parseInt(previousNum)<0 ? previousNum.substring(1) : '-'+previousNum
                         
-                        else if(flag==1)
+                        else if(flag==true)
                             {
+                                switchFlag(0);
                                 return event.target.value;
                             }
                     else if(previousNum!=0)
@@ -30,42 +31,8 @@ const Calculator=()=>
 
                 });
             }
-            const solve =(first,op,second)=>
-                {
-                    switch(op)
-                    {
-                        case '+':
-                            return first+second;
-                        case '-':
-                            return first-second;
-                        case '*': 
-                        return first*second;
-                        case '/':
-                            return first/second;
-                        case '^':
-                            return first**second;
             
-                    }
-                    console.log();
-        
-                }
-                const priority=(char)=>
-                    {
-                        switch(char)
-                        {
-                            case '+':
-                                return 1;
-                            case '-':
-                                return 1;
-                            case '*': 
-                            return 2;
-                            case '/':
-                                return 2;
-                            case '^':
-                                return 3;
                 
-                        }
-                    }
             function hh(a)
             {
                 changeNum(a);
@@ -120,12 +87,13 @@ const Calculator=()=>
                                     else
                                     {
                                         console.log(val)
-                                        operator.push(val);
+                                        
                                         break;
                                     }
                         }
+                        operator.push(val);
                     } 
-                    flag=1; 
+                    flag=true; 
                 }   
             }
         return(

@@ -16,23 +16,23 @@ export const priority=(char)=>
         }
     }
 
-    export const solve =(first,op,second)=>
+   export const solve =(first,op,second)=>
         {
             switch(op)
             {
                 case '+':
                     return first+second;
                 case '-':
-                    return first-second;
+                    return second-first;
                 case '*': 
                 return first*second;
                 case '/':
-                    return first/second;
+                    return second/first;
                 case '^':
                     return first**second;
     
             }
-            console.log();
+            
 
         }
 
