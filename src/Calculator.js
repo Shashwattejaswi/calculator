@@ -8,7 +8,7 @@ var operant = [];
 var operator = [];
 
 const Calculator = () => {
-    const [expand, changeExpand] = useState(false);
+    const [expand, changeExpand] = useState(true);
     const [num, changeNum] = useState(0);
     let flag = false
     const switchFlag = (a) => { flag = true };
