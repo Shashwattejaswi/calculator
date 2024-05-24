@@ -1,3 +1,9 @@
+
+
+
+const expandArray=[{val:'(',func:""},')','mc','m+','m-','mr','2nd','x2','x3','xy','ex','10x','1/x','2x','3x','yx','ln','log10','x!','sin','cos','tan','e','EE','rad','sinh','cosh','tanh','pi','rand'];
+
+
 export const priority=(char)=>
     {
         switch(char)

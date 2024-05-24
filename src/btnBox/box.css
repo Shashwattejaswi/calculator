@@ -38,6 +38,10 @@ button
     font-size: larger;
     
 }
+.Exp
+{
+    background-color: rgb(70, 70, 70);
+}
 
 button:hover{
     background-color: rgb(58, 58, 58);;

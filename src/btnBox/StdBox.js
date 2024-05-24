@@ -11,10 +11,11 @@ const StdBox=({takePutNum,operate})=>
                             {
                                 return <button value={item} index={index} className={'operator'+' '+'StdBoxItem'} onClick={(e)=>{operate(e)}}>{item}</button>
                             }
-                        if((index===19 && index===16))
-                            {
-                                return <button value={item} index={index} onClick={(e)=>{takePutNum(e)}} className={'operator'+' '+'roundBtn'}>{item}</button>
-                            }
+                        
+                        // else if((index===19 && index===16))
+                        //     {
+                        //         return <button value={item} index={index} onClick={(e)=>{takePutNum(e)}} className={'operator'+' '+'roundBtn'}>{item}</button>
+                        //     }
                        if((item>=0 && item<=9) ||item==='.' || item==='C')
                         return <button value={item} index={index} className='StdBoxItem' onClick={(e)=>{takePutNum(e)}}>{item}</button>
 

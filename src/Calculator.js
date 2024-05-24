@@ -106,12 +106,19 @@ const Calculator=()=>
                 return ex===true ? changeExpand(false) :  changeExpand(true);
 
             }
+            const mathExp=(e)=>
+                {
+                    // let val=item.val;
+                    
+                    changeNum(e(num));
+                    
+                }
         return(
             <div className="containar">
                 <HeadBar expandbtn={expandbtn}/>
                 <input className="rsltBox" value={num}/>
                 <div className="btnBox">
-                    {expand && <ExpandBox/>}
+                    {expand && <ExpandBox mathExp={mathExp}/>}
                     <StdBox takePutNum={takePutNum} operate={operate}/>
                 </div>
                 
