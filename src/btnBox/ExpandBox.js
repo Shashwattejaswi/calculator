@@ -1,7 +1,7 @@
 import "./box.css"
 const ExpandBox=({mathExp})=>
     {
-        const expandArray=['(',')','mc','m+','m-','mr','2nd',{val:"x2",func:(a)=>{return Math.pow(a,2)}},{val:'x3',func:(a)=>{return Math.pow(a,3)}},'xy',{val:"ex",func:(a)=>{return Math.exp(a)}},{val:"10x",func:(a)=>{return Math.pow(10,a)}},'1/x',{val:"x",func:(a)=>{return Math.sqrt(a)}},{val:"x",func:(a)=>{return Math.cbrt(a)}},'yx','ln',{val:"log10",func:(a)=>{return Math.log10(a)}},{val:"x!",func:(a)=>{let sum=1;while(a!=0){sum=sum*a;a--}return sum}},'sin','cos','tan','e','EE','rad','sinh','cosh','tanh',{val:"PI",func:(a)=>{return Math.PI}},{val:"rand",func:(a)=>{return Math.floor(Math.random()*1000)}}];
+        const expandArray=['(',')','mc','m+','m-','mr','2nd',{val:"x2",func:(a)=>{return Math.pow(a,2)}},{val:'x3',func:(a)=>{return Math.pow(a,3)}},'xy',{val:"ex",func:(a)=>{return Math.exp(a)}},{val:"10x",func:(a)=>{return Math.pow(10,a)}},'1/x',{val:"x",func:(a)=>{return Math.sqrt(a)}},{val:"x",func:(a)=>{return Math.cbrt(a)}},'yx','ln',{val:"log10",func:(a)=>{return Math.log10(a)}},{val:"x!",func:(a)=>{let sum=1;while(a!=0){sum=sum*a;a--}return sum}},{val:"sin",func:(a)=>{return Math.sin(a * Math.PI/180)}},{val:"cos",func:(a)=>{return Math.cos(a * Math.PI/180)}},{val:"tan",func:(a)=>{return Math.tan(a * Math.PI/180)}},'e','EE','rad','sinh','cosh','tanh',{val:"PI",func:(a)=>{return Math.PI}},{val:"rand",func:(a)=>{return Math.floor(Math.random()*1000)}}];
         
         return(
             <div className="ExpandBox"> 
@@ -14,7 +14,7 @@ const ExpandBox=({mathExp})=>
                     else if(index==13)
                         return <button onClick={()=>{mathExp(item.func)}} value={item.val}className={'Exp'} >&radic;{item.val}</button>
 
-                    if(index==17 || index>12 && index<=14 || index==18 || index==28 || index==29)
+                    if(index==17 || index>12 && index<=14 || (index>=18 && index<=21) || index==28 || index==29)
                         return <button onClick={()=>{mathExp(item.func)}} value={item.val}className={'Exp'} >{item.val}</button>
                     else
                     return <button value={item} index={index} className={'Exp'} >{item}</button>

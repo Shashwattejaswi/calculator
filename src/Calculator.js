@@ -10,8 +10,9 @@ var operator = [];
 const Calculator = () => {
     const [expand, changeExpand] = useState(true);
     const [num, changeNum] = useState(0);
-    let flag = false
-    const switchFlag = (a) => { flag = true };
+    const [flag,setflag]=useState(false);
+    
+   
     const takePutNum = (event) => {
         changeNum((previousNum) => {
             if (event.target.value == 'C')
@@ -21,9 +22,11 @@ const Calculator = () => {
 
                 return parseInt(previousNum) < 0 ? previousNum.substring(1) : '-' + previousNum
 
-            else if (flag == true) {
-                switchFlag(0);
+            else if (flag) {
+                
+                setflag(false);
                 return event.target.value;
+                
             }
             else if (previousNum != 0)
                 return previousNum + event.target.value;
@@ -84,7 +87,7 @@ const Calculator = () => {
                 }
                 operator.push(val);
             }
-            flag = true;
+           setflag(true);
         }
     }
 
