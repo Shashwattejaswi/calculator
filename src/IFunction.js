@@ -38,16 +38,55 @@ export const solve = (first, op, second) => {
 
 }
 
-const parameter = (eq) => {
-    const operator = [];
-    const operant = [];
-    let i = 0;
-    while (i < eq.length) {
-        if (isNaN(eq.charAt(i))) {
+const eq=['5','*','100','-','10','/','5'];
 
-        }
-        else {
-            operant.push(eq.charAt(i));
-        }
+
+
+export const inToPre=(aj)=>
+    {
+        let oper=[];
+        let nums=[];
+        aj.forEach((a)=>{
+            if(isNaN(a))
+                {
+                    if(oper.length==0)
+                        {
+                            oper.push(a)
+                        }
+                    else
+                    {
+                        while(oper.length>0)
+                            {
+
+                                if(priority(oper[oper.length-1])>=priority(a))
+                                    {
+                                        let f=nums.pop();
+                                        let l=nums.pop();
+                                        let o=oper.pop();
+                                        nums.push(solve(f,o,l));
+                                        
+                                    }
+                                    else{
+                                        break;
+                                    } 
+                            }
+                            oper.push(a);
+                    }
+                }
+            else
+            {
+                alert(a)
+                nums.push(parseInt(a));
+            }
+        })
+
+        while(oper.length>0)
+            {
+                let a=nums.pop();
+                let b=nums.pop();
+                nums.push(solve(a,oper.pop(),b));
+
+            }  
+            
+            return(nums.pop());      
     }
-}

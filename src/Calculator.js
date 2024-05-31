@@ -3,9 +3,11 @@ import StdBox from './btnBox/StdBox'
 import { useState } from 'react';
 import HeadBar from './HeadBar';
 import ExpandBox from './btnBox/ExpandBox';
-import { priority, solve } from './IFunction';
+import { priority, solve, inToPre} from './IFunction';
 var operant = [];
 var operator = [];
+const eq=[];
+const r=['93','-','4','*','12','+','5'];
 
 const Calculator = () => {
     const [expand, changeExpand] = useState(true);
@@ -37,56 +39,71 @@ const Calculator = () => {
     }
 
 
-    function hh(a) {
-        changeNum(a);
-    }
-
+   
     const operate = (event) => {
 
         let val = event.target.value;
         if (val == '=') {
             console.log(operator.length + " krishna")
-            operant.push(parseInt(num))
-            while (operator.length > 0) {
-                let first = operant.pop()
-                let second = operant.pop()
-                let c = operator.pop()
-                let r = solve(first, c, second);
-                console.log(r);
-                operant.push(r);
-            }
-            hh(operant.pop())
+            eq.push(num)
+
+            // operant.push(parseInt(num))
+            // while (operator.length > 0) {
+            //     let first = operant.pop()
+            //     let second = operant.pop()
+            //     let c = operator.pop()
+            //     let r = solve(first, c, second);
+            //     console.log(r);
+            //     operant.push(r);
+            // }
+            // hh(operant.pop())
+            changeNum(inToPre(eq));   // method that evaluate by covert in post
+            while(eq.length>0)   
+                {
+                    eq.pop();
+                }
         }
         else {
-            console.log(parseInt(num))
-            operant.push(parseInt(num))
-            if (operator.length == 0) {
-                console.log(val + " " + operator.length + " " + operant.length);
-                operator.push(val);
-            }
-            else {
-                while (operator.length > 0) {
-                    let c = priority(operator[operator.length - 1]);
-                    let d = priority(val);
-                    console.log(c + ' ' + d);
-                    if (d <= c) {
-                        let first = operant.pop();
-                        let second = operant.pop();
-                        let c = operator.pop();
-                        console.log(first + " " + c + "" + second)
-                        let e = solve(first, c, second);
-
-                        console.log(e + ' haha');
-                        operant.push(e);
-                    }
-                    else {
-                        console.log(val)
-
-                        break;
-                    }
+            if(!flag)   // if previous input is a number
+                {
+                    eq.push(num);     // in eq equation store as in infix form
+                    eq.push(val);
                 }
-                operator.push(val);
+            else  // if previous input is an operator (means operator press two type)
+            {   
+                eq.pop();
+                eq.push(val);
             }
+            // console.log(parseInt(num))
+            // operant.push(parseInt(num))
+            // if (operator.length == 0) {
+            //     console.log(val + " " + operator.length + " " + operant.length);
+            //     operator.push(val);
+                
+            // }
+            // else {
+            //     while (operator.length > 0) {
+            //         let c = priority(operator[operator.length - 1]);
+            //         let d = priority(val);
+            //         console.log(c + ' ' + d);
+            //         if (d <= c) {
+            //             let first = operant.pop();
+            //             let second = operant.pop();
+            //             let c = operator.pop();
+            //             console.log(first + " " + c + "" + second)
+            //             let e = solve(first, c, second);
+
+            //             console.log(e + ' haha');
+            //             operant.push(e);
+            //         }
+            //         else {
+            //             console.log(val)
+
+            //             break;
+            //         }
+            //     }
+            //     operator.push(val);
+            // }
            setflag(true);
         }
     }
