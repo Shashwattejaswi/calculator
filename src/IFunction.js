@@ -75,7 +75,6 @@ export const inToPre=(aj)=>
                 }
             else
             {
-                alert(a)
                 nums.push(parseInt(a));
             }
         })

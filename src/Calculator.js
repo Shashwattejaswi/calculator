@@ -13,6 +13,7 @@ const Calculator = () => {
     const [expand, changeExpand] = useState(true);
     const [num, changeNum] = useState(0);
     const [flag,setflag]=useState(false);
+    //const [curHis,setCurHis]=useState(eq);
     
    
     const takePutNum = (event) => {
@@ -46,6 +47,7 @@ const Calculator = () => {
         if (val == '=') {
             console.log(operator.length + " krishna")
             eq.push(num)
+            
 
             // operant.push(parseInt(num))
             // while (operator.length > 0) {
@@ -68,6 +70,7 @@ const Calculator = () => {
                 {
                     eq.push(num);     // in eq equation store as in infix form
                     eq.push(val);
+
                 }
             else  // if previous input is an operator (means operator press two type)
             {   
@@ -122,6 +125,7 @@ const Calculator = () => {
     return (
         <div className="containar">
             <HeadBar expandbtn={expandbtn} />
+            <input className='history' value={null}/>
             <input className="rsltBox" value={num} />
             <div className="btnBox">
                 {expand && <ExpandBox mathExp={mathExp} />}

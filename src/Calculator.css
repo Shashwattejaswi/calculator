@@ -45,3 +45,16 @@
     text-align: end;
     padding:1%;
 }
+.history
+{
+    border: 0px;
+    width: 96%;
+    padding: 0px;
+    height: 8%;
+    background-color: rgb(53, 53, 53);
+    color: rgb(198, 198, 198);
+    outline: none;
+    font-size: 20px;
+    text-align: end;
+    padding:1%;
+}
