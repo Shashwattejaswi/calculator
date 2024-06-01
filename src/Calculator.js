@@ -22,8 +22,12 @@ const Calculator = () => {
                 return '0';
             // return (parseInt(previousNum)<10 && parseInt(previousNum)>-10 )? '0' : previousNum.substring(0,previousNum.length-1);
             else if (event.target.value == "-/+")
+                {
 
-                return parseInt(previousNum) < 0 ? previousNum.substring(1) : '-' + previousNum
+                    if(previousNum==0)
+                        return previousNum;
+                    return parseInt(previousNum) < 0 ? previousNum.substring(1) : '-' + previousNum
+                }
 
             else if (flag) {
                 
